@@ -1,2 +1,7 @@
-# lnngle-eav
-lnngle-eav
+# Lnngle eav
+
+
+## run application
+
+nx serve api
+nx serve lnngle-eav
