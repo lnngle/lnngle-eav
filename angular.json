@@ -205,6 +205,58 @@
           }
         }
       }
+    },
+    "eav-model": {
+      "root": "libs/eav-model",
+      "sourceRoot": "libs/eav-model/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/eav-model/tsconfig.lib.json",
+              "libs/eav-model/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/eav-model/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/eav-model/jest.config.js",
+            "tsConfig": "libs/eav-model/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "eav-commons": {
+      "root": "libs/eav-commons",
+      "sourceRoot": "libs/eav-commons/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/eav-commons/tsconfig.lib.json",
+              "libs/eav-commons/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/eav-commons/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/eav-commons/jest.config.js",
+            "tsConfig": "libs/eav-commons/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -16,7 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@lnngle-eav/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@lnngle-eav/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@lnngle-eav/eav-model": ["libs/eav-model/src/index.ts"],
+      "@lnngle-eav/eav-commons": ["libs/eav-commons/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
