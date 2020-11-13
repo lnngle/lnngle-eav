@@ -1,5 +1,4 @@
 
-import { Test, TestingModule } from '@nestjs/testing';
 import { EavAttribute } from './eav-attribute';
 
 describe('EavAttribute', () => {
@@ -13,7 +12,7 @@ describe('EavAttribute', () => {
     eavAttribute.code = code;
   });
 
-  it('验证对象和实例', () => {
+  it('test EavAttribute instance and method', () => {
     expect(eavAttribute).toBeInstanceOf(EavAttribute);
     expect(eavAttribute.id).toEqual(id);
     expect(eavAttribute.code).toEqual(code);
