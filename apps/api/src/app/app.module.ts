@@ -3,23 +3,22 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
+import { join } from 'path';
 
-import * as path from 'path';
+console.debug("APP_ENV:" + process.env.APP_ENV);
 
-const ENV = 'test';
-console.debug(ENV);
-console.debug(path.resolve(__dirname, 'env', !ENV ? '.env' : `.env.${ENV}`));
-console.debug(path.resolve(__dirname, '*/**!(*.d).config.{ts,js}'));
-console.debug(path.resolve(__dirname, '*/**!(*.d).env.dev'));
+const envFilePath = process.env.APP_ENV === 'dev' ?
+join(process.cwd(), 'environment', 'dev.env') :
+join(process.cwd(), 'environment', 'prod.env');
+console.debug("envFilePath:" + envFilePath);
 
 @Module({
   imports: [
     ConfigModule.forRoot({
+      encoding: 'utf-8',
       isGlobal: true,
-      ignoreEnvVars: true,
-      envFilePath: [
-        path.resolve(__dirname, '*/**!(*.d).env.dev')
-      ],
+      ignoreEnvFile: false,
+      envFilePath: ['.env', './apps/api/environment/dev.env'],
     })
   ],
   controllers: [AppController],

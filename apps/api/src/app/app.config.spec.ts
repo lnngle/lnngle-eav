@@ -1,5 +1,6 @@
 import { ConfigService } from '@nestjs/config';
 import { Test } from '@nestjs/testing';
+import { AppModule } from './app.module';
 
 describe('test configuration parameter', () => {
 
@@ -7,6 +8,7 @@ describe('test configuration parameter', () => {
 
   beforeAll(async () => {
     const app = await Test.createTestingModule({
+      imports: [AppModule],
       providers: [ConfigService],
     }).compile();
 
@@ -18,10 +20,9 @@ describe('test configuration parameter', () => {
       expect(configService).not.toBeNull;
     });
 
-    /* it('all typeorm parameters is right', () => {
-      // console.debug(process.env);
-      expect(configService.get<string>('TYPEORM_TYPE')).toEqual('mongodb');
-    }); */
+    it('all typeorm parameters is right', () => {
+      expect(configService.get<string>('aa')).toEqual('dev');
+    });
   });
 
 });
