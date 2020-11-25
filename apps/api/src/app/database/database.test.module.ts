@@ -13,7 +13,8 @@ export default (customOpts: any = {}) => TypeOrmModule.forRootAsync({
       host: '127.0.0.1',
       port,
       database,
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      useUnifiedTopology: true,
+      entities: ['../**/*.entity{.ts,.js}'],
       ...customOpts,
     };
   },
