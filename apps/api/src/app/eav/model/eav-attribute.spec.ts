@@ -1,5 +1,5 @@
 
-import { EavAttribute } from './eav-attribute';
+import { EavAttribute } from './eav-attribute.entity';
 
 describe('EavAttribute', () => {
   let eavAttribute: EavAttribute;

@@ -21,7 +21,7 @@ describe('test configuration parameter', () => {
     });
 
     it('all typeorm parameters is right', () => {
-      expect(configService.get<string>('aa')).toEqual('dev');
+      expect(configService.get<string>('database.type')).toEqual('mongo');
     });
   });
 
